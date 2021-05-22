@@ -21,7 +21,7 @@ class Stack:
         Add the element ‘element’ at the top of stack
         :param element: element to add to stack
         """
-        if self.size() == self.max_size:
+        if self.max_size and self.size() == self.max_size:
             raise IndexError
         self.data.append(element)
 
