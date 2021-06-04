@@ -69,6 +69,16 @@ class Queue_:
             if value:
                 return key, self.data[key][-1]
 
+    def see(self) -> list:
+        """
+        Return a flat representation of the queue_
+        :return: a list of all elements in the queue_
+        """
+        queue = []
+        for _, value in sorted(self.data.items())[::-1]:
+            queue.extend(value)
+        return queue
+
     # pylint: disable=no-self-use
     def capacity(self) -> int:
         """
@@ -76,3 +86,31 @@ class Queue_:
         :return: Maximal size of queue_
         """
         return 0
+
+    def __len__(self):
+        """
+        Return the length queue_
+        :return: Number of elements in queue_
+        """
+        return self.size()
+
+    def __contains__(self, element) -> bool:
+        """
+        Check whether the element ‘element’ is in the queue_
+        :param element: the element to be checked
+        :return: True if the element ‘element’ is in the queue_.
+                 False if the element ‘element’ is not in the queue_
+        """
+        for value in self.data.values():
+            if element in value:
+                return True
+        return False
+
+    def __iter__(self):
+        """
+        Iterate over the queue_
+        :return: an element of the queue_
+        """
+        queue = self.see()
+        for _ in range(len(queue)):
+            yield queue.pop(-1)
