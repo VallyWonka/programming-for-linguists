@@ -64,7 +64,7 @@ class Op(Element, metaclass=OpMeta):
     def _function(*args, **kwargs) -> float:
         """
         Functions to calculate the operation.
-        Arguments depends on the specific operator.
+        Arguments depend on the specific operator.
         """
         raise NotImplementedError
 
@@ -79,7 +79,14 @@ class Op(Element, metaclass=OpMeta):
         return Digit(res)
 
     def __gt__(self, other: 'Op') -> bool:
-        pass
+        if self.priority > other.priority:
+            return True
+        return False
 
     def __eq__(self, other: 'Op') -> bool:
-        pass
+        if self.priority == other.priority:
+            return True
+        return False
+
+    def __repr__(self):
+        return self.symbol

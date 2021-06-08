@@ -9,7 +9,7 @@ from algorithms.calculator.reverse_polish_notation import Digit
 from algorithms.calculator.reverse_polish_notation.binary_op import Plus, Minus, Multiplier, Divider, Power
 
 
-@unittest.skip('There is not implementation of Operators yet')
+# @unittest.skip('There is not implementation of Operators yet')
 class BinaryOpImplementationTestCase(unittest.TestCase):
     """
     Test cases for Binary operators

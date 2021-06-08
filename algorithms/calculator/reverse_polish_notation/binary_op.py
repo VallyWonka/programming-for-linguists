@@ -17,7 +17,7 @@ class BinaryOp(Op):
     def _function(first_element: float, second_element: float) -> float:
         """
         The static function that computes the result of the binary operator
-        Must be implemented in each  class of particular operator
+        Must be implemented in each class of particular operator
 
         :param first_element: float - first operand of the binary operator
         :param second_element: float - second operand of the binary operator
@@ -43,27 +43,97 @@ class Plus(BinaryOp):
     """
     Implementation of operator +
     """
+    priority = 0
+    symbol = "+"
+
+    @staticmethod
+    def _function(first_element: float, second_element: float) -> float:
+        """
+        The static function that computes the result of the binary operator
+        Must be implemented in each class of particular operator
+
+        :param first_element: float - first operand of the binary operator
+        :param second_element: float - second operand of the binary operator
+        :return: float - result of computing the operation in the "raw" (floating) format
+        """
+        return first_element + second_element
 
 
 class Minus(BinaryOp):
     """
     Implementation of operator -
     """
+    priority = 0
+    symbol = "-"
+
+    @staticmethod
+    def _function(first_element: float, second_element: float) -> float:
+        """
+        The static function that computes the result of the binary operator
+        Must be implemented in each class of particular operator
+
+        :param first_element: float - first operand of the binary operator
+        :param second_element: float - second operand of the binary operator
+        :return: float - result of computing the operation in the "raw" (floating) format
+        """
+        return first_element - second_element
 
 
 class Multiplier(BinaryOp):
     """
     Implementation of operator *
     """
+    priority = 1
+    symbol = "*"
+
+    @staticmethod
+    def _function(first_element: float, second_element: float) -> float:
+        """
+        The static function that computes the result of the binary operator
+        Must be implemented in each class of particular operator
+
+        :param first_element: float - first operand of the binary operator
+        :param second_element: float - second operand of the binary operator
+        :return: float - result of computing the operation in the "raw" (floating) format
+        """
+        return first_element * second_element
 
 
 class Divider(BinaryOp):
     """
     Implementation of operator /
     """
+    priority = 1
+    symbol = "/"
+
+    @staticmethod
+    def _function(first_element: float, second_element: float) -> float:
+        """
+        The static function that computes the result of the binary operator
+        Must be implemented in each  class of particular operator
+
+        :param first_element: float - first operand of the binary operator
+        :param second_element: float - second operand of the binary operator
+        :return: float - result of computing the operation in the "raw" (floating) format
+        """
+        return first_element / second_element
 
 
 class Power(BinaryOp):
     """
     Implementation of operator ^
     """
+    priority = 2
+    symbol = "^"
+
+    @staticmethod
+    def _function(first_element: float, second_element: float) -> float:
+        """
+        The static function that computes the result of the binary operator
+        Must be implemented in each  class of particular operator
+
+        :param first_element: float - first operand of the binary operator
+        :param second_element: float - second operand of the binary operator
+        :return: float - result of computing the operation in the "raw" (floating) format
+        """
+        return first_element ** second_element

@@ -8,7 +8,7 @@ import unittest
 from algorithms.calculator.reverse_polish_notation.bracket import OpenBracket, CloseBracket
 
 
-@unittest.skip('There is not implementation of Brackets yet')
+# @unittest.skip('There is not implementation of Brackets yet')
 class BracketsTestCase(unittest.TestCase):
     """
     Test cases for Brackets operators

@@ -8,7 +8,7 @@ import unittest
 from algorithms.calculator.reverse_polish_notation import Digit
 
 
-@unittest.skip('There is not implementation of Digits yet')
+# @unittest.skip('There is not implementation of Digits yet')
 class DigitTestCase(unittest.TestCase):
     """
     Test cases for Digits operators
