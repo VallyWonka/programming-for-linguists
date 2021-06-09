@@ -16,6 +16,8 @@ class Digit(Element):
     def __init__(self, digit_as_string: Union[float, str]):
         if not digit_as_string:
             self.digit = None
+        elif isinstance(digit_as_string, (float, int)):
+            self.digit = digit_as_string
         elif "." in digit_as_string:
             self.digit = float(digit_as_string)
         else:

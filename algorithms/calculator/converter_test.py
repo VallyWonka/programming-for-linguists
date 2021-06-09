@@ -12,7 +12,7 @@ from algorithms.calculator.converter import ReversePolishNotationConverter
 from algorithms.calculator.reverse_polish_notation import ReversePolishNotation, Digit
 
 
-@unittest.skip('There is not implementation of ReversePolishNotationConverter yet')
+# @unittest.skip('There is not implementation of ReversePolishNotationConverter yet')
 class ConverterTestCase(unittest.TestCase):
     """
     Class with test cases for ReversePolishNotationConverter
