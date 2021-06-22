@@ -47,22 +47,31 @@ class ReversePolishNotationConverter:
         :return: ReversePolishNotation object
         """
         state = ReversePolishNotationConverterState(expression_in_infix_notation)
+
         while not state.expression_in_infix_notation.empty():
+
             digit = ReversePolishNotationConverter.read_digit(state)
+
             if digit.digit:
                 state.expression_in_postfix_notation.put(digit)
                 continue
+
             operator = OpFactory.get_op_by_symbol(state.expression_in_infix_notation.get())
+
             if ReversePolishNotationConverter.is_open_bracket(operator):
                 state.stack.push(operator)
+
             elif ReversePolishNotationConverter.is_close_bracket(operator):
                 state.pop_from_stack_until_opening_bracket()
+
             elif ReversePolishNotationConverter.is_binary_operation(operator):
                 ReversePolishNotationConverter.pop_from_stack_until_prioritizing(operator, state)
                 state.stack.push(operator)
+
         while not state.stack.empty():
             state.expression_in_postfix_notation.put(state.stack.top())
             state.stack.pop()
+
         return state.expression_in_postfix_notation
 
     @staticmethod
